@@ -1,0 +1,38 @@
+{
+  // ─── 編輯器基本設定 ─────────────────────────────────────────
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  
+  // ─── 檔案設定 ───────────────────────────────────────────────
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/node_modules": true,
+    "**/.pytest_cache": true
+  },
+
+  // ─── Todo Tree ──────────────────────────────────────────────
+  "todo-tree.general.tags": ["TODO", "FIXME", "NOTE", "HACK", "BUG"],
+
+  // ─── Markdown ───────────────────────────────────────────────
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  }
+
+  // ─── Python（取消註解以啟用）─────────────────────────────────
+  // "python.formatting.provider": "black",
+  // "python.linting.enabled": true,
+  // "python.linting.pylintEnabled": true,
+
+  // ─── JavaScript/TypeScript（取消註解以啟用）──────────────────
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // }
+}

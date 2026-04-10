@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles",
+    "bierner.markdown-mermaid",
+    "eamodio.gitlens",
+    "gruntfuggly.todo-tree",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
