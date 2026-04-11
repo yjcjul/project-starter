@@ -1,7 +1,8 @@
 {
   "folders": [
     { "name": "🗂 孵化器｜project-starter", "path": "." },
-    { "name": "📄 獨立專案｜datacore-learning", "path": "../docs-datacore-learning" }
+    { "name": "📄 獨立專案｜datacore-learning", "path": "../docs-datacore-learning" },
+    { "name": "🔀 獨立專案｜citrix-pvs-school-deploy", "path": "../mixed-citrix-pvs-school-deploy" }
   ],
   "settings": {
     "editor.wordWrap": "on",
