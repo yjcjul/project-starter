@@ -1,5 +1,8 @@
 {
-  "folders": [],
+  "folders": [
+    { "name": "🗂 孵化器｜project-starter", "path": "." },
+    { "name": "📄 獨立專案｜datacore-learning", "path": "../docs-datacore-learning" }
+  ],
   "settings": {
     "editor.wordWrap": "on",
     "explorer.sortOrder": "type",
