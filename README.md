@@ -8,6 +8,7 @@
 projects/
 ├── new-project.sh              # ✅ 一鍵建立新專案腳本
 ├── _workspace.code-workspace   # VS Code 多專案工作區
+├── _base/                      # 🏫 共用知識庫（學校基礎環境資訊）
 ├── templates/                  # 各類型模板（請勿修改）
 │   ├── docs/                   # 📄 文件筆記型模板
 │   ├── code/                   # 💻 程式開發型模板

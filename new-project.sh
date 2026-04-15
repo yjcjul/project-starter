@@ -8,6 +8,7 @@ set -e
 
 PROJECTS_ROOT="$(cd "$(dirname "$0")" && pwd)"
 TEMPLATES_DIR="$PROJECTS_ROOT/templates"
+BASE_DIR="$PROJECTS_ROOT/_base"
 WORKSPACE_FILE="$PROJECTS_ROOT/_workspace.code-workspace"
 
 # ── 顏色輸出 ────────────────────────────────────────────────
@@ -63,6 +64,12 @@ echo -e "${BLUE}🔨 建立專案結構...${NC}"
 
 mkdir -p "$PROJECT_DIR"
 cp -r "$TEMPLATES_DIR/$TYPE/." "$PROJECT_DIR/"
+
+# ── 複製共用知識庫 (_base) ────────────────────────────────────
+if [[ -d "$BASE_DIR" ]]; then
+  echo -e "${BLUE}📚 複製共用知識庫 (_base)...${NC}"
+  cp -r "$BASE_DIR" "$PROJECT_DIR/_base"
+fi
 
 # ── 替換模板中的變數 ──────────────────────────────────────────
 TODAY=$(date +%Y-%m-%d)
