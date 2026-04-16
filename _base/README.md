@@ -18,6 +18,7 @@
 | `school-hardware.md` | 校內硬體設備清單（桌機型號、規格） |
 | `school-infra.md` | 學校基礎設施（AD、伺服器、機房） |
 | `school-overview.md` | 學校基本概況（教室/辦公室分佈） |
+| `school-vlan-table.md` | 完整 VLAN 對照表（含位置、IP、用途） |
 
 ## 更新原則
 
