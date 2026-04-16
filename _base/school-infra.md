@@ -109,18 +109,65 @@
 | R630 #2 | 備用 |
 | R720XD 空機 | 備用零件（電源、機殼） |
 
+### 軟體授權
+
+#### DataCore SANsymphony ✅ 已確認
+
+| 項目 | 內容 |
+|------|------|
+| 版本 | SANsymphony **EN Edition** |
+| 授權類型 | Perpetual（永久授權）+ 支援合約 |
+| 授權容量 | **28 TB** |
+| 支援到期 | **2029/09/29** |
+| 訂單號 | SO-2026-268975 |
+| 購買日 | 2026/03/30 |
+| 終端用戶 | 臺中市立黎明國民中學 (M14212603300049) |
+| 經銷 | 捷達(Primetek) / 聿信(MetaAge) |
+| License Key | MXBC-KFB1R-AZ28W-DD99Z-HGSSCD |
+
+> ⚠️ 授權 28TB，預估 RAID 後可用約 47TB，**超出部分無法由 DataCore 管理**
+> 但 28TB 對學校使用量應足夠，可分階段擴充
+
+#### VMware vSphere Essentials 🔴 有嚴重限制
+
+| 項目 | 內容 |
+|------|------|
+| 版本 | vSphere 4 Essentials PROMO Bundle |
+| 主機數 | **3 hosts** |
+| CPU 限制 | **Max 2 processors per host, 6 cores per processor** |
+| 授權類型 | **Subscription（訂閱制，非永久）** |
+| 訂閱期間 | **2024/05/19 ~ 2027/05/18** |
+| VMware Order # | 41527893 |
+| Part Number | VS4-ESSL-SUB-C |
+
+> 🔴 **核心限制問題**：授權每顆 CPU 只能用 6 核心
+> R760 有 16 核 → 只能用 37%、R660 有 16 核 → 只能用 37%、R630 有 14 核 → 只能用 43%
+> 花錢買了強 CPU 但 VMware 只讓用不到一半
+>
+> 🔴 **訂閱 2027/05 到期**：訂閱制過期就不能用（不是永久授權）
+> 必須在 2027/05 前決定：續約（Broadcom 漲價中）或換方案（如 Proxmox VE 免費）
+>
+> ❓ **待確認**：6 core 限制能否升級？升級費用？2027 續約費用？
+
+#### Windows Server 2022
+
+| 項目 | 狀態 |
+|------|------|
+| 是否有授權 | ❓ 需確認是否有或需購買 |
+| 需要數量 | 2 份（DataCore 主 + Mirror 各一台） |
+
 ### 待確認事項
 
 | 項目 | 狀態 |
 |------|------|
 | R720xd 的 SAS HBA 是 6G 還是 12G | ❓ 確認是否需換裝新購的 12G HBA |
 | R660 的 RAM（建議加到 128GB） | ❓ 目前 64GB，建議加購 DDR5 |
-| DataCore 授權是否有效 | ❓ 問工程師 |
-| DataCore 版本號 | ❓ 問工程師 |
-| VMware Essentials 授權版本（vSphere 7 or 8） | ❓ 問工程師 |
-| VMware Essentials Key 是否還在 | ❓ 問工程師 |
+| VMware 6 core 限制能否升級 | 🔴 **急** — 不升級浪費 60% CPU |
+| VMware 升級到更多核心的費用 | 🔴 **急** — 問經銷商 |
+| VMware 2027/05 續約費用 | 🟡 提前編預算 |
+| 是否考慮改用 Proxmox VE（免費） | 🟡 無核心限制，但工程師可能不熟 |
 | Windows Server 2022 授權 | ❓ 需確認是否有或需購買 |
-| Brocade 300 的 FC port 數量是否足夠 | ❓ 需 10 port（5台×2） |
+| Brocade 300 的 FC port 數量是否足夠 | ✅ 應該足夠（用戶確認） |
 | R720xd 本機硬碟數量/容量 | ❓ 可增加額外容量 |
 
 ---
