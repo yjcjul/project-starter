@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>{{ school }} 教職員敘獎擬議清冊</title>
+<style>
+  @page { size: A4 landscape; margin: 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "標楷體", "DFKai-SB", serif; font-size: 12pt; }
+  h1 { text-align: center; font-size: 15pt; margin-bottom: 6pt; }
+  .meta { font-size: 11pt; margin-bottom: 4pt; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8pt; }
+  th, td { border: 1px solid #000; padding: 6pt 8pt; text-align: center; vertical-align: middle; }
+  .sign-section { margin-top: 20pt; display: flex; gap: 40pt; justify-content: flex-end; font-size: 11pt; }
+  .sign-box { text-align: center; min-width: 80pt; }
+</style>
+</head>
+<body>
+<h1>{{ school }}教職員敘獎擬議清冊</h1>
+<div class="meta">敘獎事由：{{ competition }}決賽得獎</div>
+<div class="meta">來文依據：{{ doc_ref }}</div>
+<div class="meta">規定可敘獎總人數：{{ teachers | length }} 人</div>
+<div class="meta">本案敘獎人數是否含校長：□是 ■否 ；校長敘獎程序：□教育局逆核 □擬建議函</div>
+
+<table>
+  <tr>
+    <th>職稱</th>
+    <th>姓名</th>
+    <th>負責工作</th>
+    <th>擬敘獎額度</th>
+    <th>備註</th>
+  </tr>
+  {% for t in teachers %}
+  <tr>
+    <td>{{ t.title }}</td>
+    <td>{{ t.name }}</td>
+    <td style="text-align:left">{{ t.contribution }}</td>
+    <td>{{ t.award }}</td>
+    <td></td>
+  </tr>
+  {% endfor %}
+  {% for i in range(10 - teachers|length) %}
+  <tr><td style="height:24pt">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<mxfile host="app.diagrams.net" modified="2026-04-20" type="device">
+  <diagram id="rack-layout" name="機房配置圖">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ===== 標題 ===== -->
+        <mxCell id="title" value="&lt;b&gt;黎明國中 機房配置圖（施工規劃用）&lt;/b&gt;&lt;br&gt;2026-04-20 Draft" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="500" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 網路櫃 (不動) ===== -->
+        <mxCell id="rack-net" value="&lt;b&gt;網路櫃&lt;/b&gt;&lt;br&gt;(現有，不動)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=13;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="220" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="net-sw1" value="&lt;b&gt;Core Switch&lt;/b&gt;&lt;br&gt;(現有)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="net-sw2" value="Edge / Access Switch&lt;br&gt;(現有，連教室)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="230" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="net-patch" value="銅纜 Patch Panel&lt;br&gt;(現有，連教室)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="net-fiber-box" value="&lt;b&gt;光纖收容箱 1U × 1&lt;/b&gt;&lt;br&gt;(新增，MPO→LC)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="380" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="net-note" value="&lt;i&gt;※ 此櫃不動不整修&lt;br&gt;僅新增光纖收容箱&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="120" y="450" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 光纖配線架 ===== -->
+        <mxCell id="rack-fiber" value="&lt;b&gt;光纖配線架&lt;/b&gt;&lt;br&gt;41U 開放型機架 (新)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;fontSize=13;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="100" width="220" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="fiber-box1" value="&lt;b&gt;光纖收容箱 1U&lt;/b&gt;&lt;br&gt;模組匣×2 (→網路櫃)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="160" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fiber-box2" value="&lt;b&gt;光纖收容箱 1U&lt;/b&gt;&lt;br&gt;模組匣×2 (→伺服器櫃A)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="230" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fiber-box3" value="&lt;b&gt;光纖收容箱 1U&lt;/b&gt;&lt;br&gt;模組匣×2 (→伺服器櫃B)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fiber-box4" value="&lt;b&gt;光纖收容箱 1U&lt;/b&gt;&lt;br&gt;模組匣×2 (備用)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="370" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fiber-note" value="&lt;i&gt;4條 OM4 MPO 主幹纜 10M&lt;br&gt;光導槽走機櫃上方&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 伺服器櫃 A ===== -->
+        <mxCell id="rack-a" value="&lt;b&gt;伺服器櫃 A&lt;/b&gt;&lt;br&gt;42U 新機櫃" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontSize=13;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="740" y="100" width="260" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-pdu" value="PDU 30A (直式，側掛)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="760" y="150" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-san1" value="&lt;b&gt;SAN Switch #1&lt;/b&gt;&lt;br&gt;(FC / iSCSI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="200" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-dc1" value="&lt;b&gt;DataCore Server #1&lt;/b&gt;&lt;br&gt;Dell R760 (Win Server + SANsymphony)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="270" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-vm1" value="&lt;b&gt;VM Server #1 (ESXi)&lt;/b&gt;&lt;br&gt;Dell R660" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="340" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-stor1" value="&lt;b&gt;Storage #1&lt;/b&gt;&lt;br&gt;(JBOD / SAS Shelf)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="410" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="a-ups1" value="&lt;b&gt;UPS #1&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="480" width="220" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 伺服器櫃 B ===== -->
+        <mxCell id="rack-b" value="&lt;b&gt;伺服器櫃 B&lt;/b&gt;&lt;br&gt;42U 新機櫃" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontSize=13;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="100" width="260" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-pdu" value="PDU 30A (直式，側掛)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="150" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-san2" value="&lt;b&gt;SAN Switch #2&lt;/b&gt;&lt;br&gt;(FC / iSCSI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="200" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-dc2" value="&lt;b&gt;DataCore Server #2&lt;/b&gt;&lt;br&gt;Dell R740xd (Win Server + SANsymphony Mirror)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="270" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-vm2" value="&lt;b&gt;VM Server #2 (ESXi)&lt;/b&gt;&lt;br&gt;Dell R630" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="340" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-stor2" value="&lt;b&gt;Storage #2&lt;/b&gt;&lt;br&gt;(JBOD / SAS Shelf)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="410" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="b-ups2" value="&lt;b&gt;UPS #2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="480" width="220" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== MPO 主幹纜 (光導槽上方) ===== -->
+        <mxCell id="mpo-trunk-label" value="&lt;b&gt;光導槽（機櫃上方）&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="500" y="70" width="200" height="25" as="geometry"/>
+        </mxCell>
+
+        <!-- MPO 主幹: 配線架 → 網路櫃 -->
+        <mxCell id="mpo1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#D6B656;strokeWidth=3;dashed=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fiber-box1" target="net-fiber-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mpo1-label" value="MPO 主幹 #1&lt;br&gt;OM4 12C 10M" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#D6B656;" vertex="1" connectable="0" parent="mpo1">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- MPO 主幹: 配線架 → 伺服器櫃A -->
+        <mxCell id="mpo2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#D6B656;strokeWidth=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=260;" edge="1" parent="1" source="fiber-box2" target="rack-a">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mpo2-label" value="MPO 主幹 #2&lt;br&gt;OM4 12C 10M" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#D6B656;" vertex="1" connectable="0" parent="mpo2">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- MPO 主幹: 配線架 → 伺服器櫃B -->
+        <mxCell id="mpo3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#D6B656;strokeWidth=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=260;" edge="1" parent="1" source="fiber-box3" target="rack-b">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="325"/>
+              <mxPoint x="700" y="80"/>
+              <mxPoint x="1100" y="80"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mpo3-label" value="MPO 主幹 #3&lt;br&gt;OM4 12C 10M" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#D6B656;" vertex="1" connectable="0" parent="mpo3">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- ===== LC 跳線連接 (設備 → Core SW 經 MPO) ===== -->
+
+        <!-- DataCore #1 → Core SW (經 MPO) -->
+        <mxCell id="lc-dc1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6C8EBF;strokeWidth=2;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-dc1" target="net-sw1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="295"/>
+              <mxPoint x="720" y="680"/>
+              <mxPoint x="350" y="680"/>
+              <mxPoint x="350" y="185"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lc-dc1-label" value="LC→MPO→LC&lt;br&gt;(10GbE 網路)" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" connectable="0" parent="lc-dc1">
+          <mxGeometry x="0.3" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- VM Server #1 → Core SW -->
+        <mxCell id="lc-vm1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6C8EBF;strokeWidth=2;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-vm1" target="net-sw1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="365"/>
+              <mxPoint x="730" y="700"/>
+              <mxPoint x="360" y="700"/>
+              <mxPoint x="360" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lc-vm1-label" value="LC→MPO→LC&lt;br&gt;(10GbE 網路)" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" connectable="0" parent="lc-vm1">
+          <mxGeometry x="0.3" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- SAN 連接 (櫃內) -->
+        <mxCell id="san-dc1" style="rounded=0;strokeColor=#82b366;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-san1" target="a-dc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="san-stor1" style="rounded=0;strokeColor=#82b366;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-dc1" target="a-stor1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="san-dc2" style="rounded=0;strokeColor=#82b366;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="b-san2" target="b-dc2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="san-stor2" style="rounded=0;strokeColor=#82b366;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="b-dc2" target="b-stor2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DataCore Mirror (櫃A ↔ 櫃B，經 MPO) -->
+        <mxCell id="dc-mirror" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#B85450;strokeWidth=2;dashed=1;dashPattern=8 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-dc1" target="b-dc2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="295"/>
+              <mxPoint x="1050" y="295"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dc-mirror-label" value="&lt;b&gt;DataCore Mirror&lt;/b&gt;&lt;br&gt;(Sync Replication&lt;br&gt;經 MPO 光纖)" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#B85450;" vertex="1" connectable="0" parent="dc-mirror">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- SAN Switch HA (櫃A ↔ 櫃B ISL) -->
+        <mxCell id="san-isl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;dashed=1;dashPattern=4 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="a-san1" target="b-san2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="225"/>
+              <mxPoint x="1050" y="225"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="san-isl-label" value="SAN ISL&lt;br&gt;(HA 互聯)" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#82b366;" vertex="1" connectable="0" parent="san-isl">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <!-- ===== 圖例 ===== -->
+        <mxCell id="legend-box" value="&lt;b&gt;圖例&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;verticalAlign=top;fontSize=12;spacingTop=3;" vertex="1" parent="1">
+          <mxGeometry x="100" y="660" width="500" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1" value="" style="endArrow=classic;strokeColor=#D6B656;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="710" as="sourcePoint"/>
+            <mxPoint x="220" y="710" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg1t" value="OM4 MPO 主幹纜 (12C, 光導槽)" style="text;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="697" width="300" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2" value="" style="endArrow=classic;strokeColor=#6C8EBF;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="740" as="sourcePoint"/>
+            <mxPoint x="220" y="740" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg2t" value="LC-LC 跳線 (經 MPO 收容箱轉接)" style="text;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="727" width="300" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3" value="" style="endArrow=classic;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="770" as="sourcePoint"/>
+            <mxPoint x="220" y="770" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg3t" value="SAN 連接 (FC / iSCSI)" style="text;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="757" width="300" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg4" value="" style="endArrow=classic;strokeColor=#B85450;strokeWidth=2;dashed=1;dashPattern=8 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="800" as="sourcePoint"/>
+            <mxPoint x="220" y="800" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg4t" value="DataCore Mirror (Sync Replication)" style="text;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="787" width="300" height="25" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== HA 說明 ===== -->
+        <mxCell id="ha-note" value="&lt;b&gt;高可用 (HA) 配置說明：&lt;/b&gt;&lt;br&gt;&lt;br&gt;• DataCore #1 (櫃A) ↔ DataCore #2 (櫃B) 做 Mirror&lt;br&gt;• SAN Switch #1 (櫃A) ↔ SAN Switch #2 (櫃B) 做 ISL 互聯&lt;br&gt;• Storage 各接各自的 SAN Switch&lt;br&gt;• VM Server 可透過任一路徑存取 Storage&lt;br&gt;• 兩台 UPS 各供一櫃，互不影響&lt;br&gt;&lt;br&gt;&lt;b&gt;所有跨櫃連線都經 MPO 光纖配線架轉接&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF;strokeColor=#B85450;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="700" y="660" width="400" height="180" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

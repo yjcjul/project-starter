@@ -1,0 +1,26 @@
+{
+  // ─── 編輯器基本設定 ─────────────────────────────────────────
+  "editor.wordWrap": "on",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.8,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.defaultLanguage": "markdown",
+  
+  // ─── 檔案設定 ───────────────────────────────────────────────
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ─── Markdown ───────────────────────────────────────────────
+  "markdown.preview.fontSize": 14,
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+    }
+  }
+}
