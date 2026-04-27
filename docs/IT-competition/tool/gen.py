@@ -22,6 +22,74 @@ def render(env, template_name, out_path, **ctx):
         f.write(html)
     print(f"  ✅ {out_path}")
 
+def gen_preliminary(data, out_dir, env):
+    """生成複賽文件：座位表（每人一份）+ 公假單（每競賽項目一份）"""
+    prelim = data.get("preliminary")
+    if not prelim:
+        return
+
+    year   = data["year"]
+    GRADE  = {"7": "七", "8": "八", "9": "九"}
+
+    # ── 建立教室座位格（2D list，None 代表空位）──
+    rows = prelim.get("room_rows", 2)
+    cols = prelim.get("room_cols", 8)
+    grid = [[None] * cols for _ in range(rows)]
+
+    for ev in prelim.get("events", []):
+        for s in ev.get("students", []):
+            r, c = s.get("room_row", 1) - 1, s.get("room_col", 1) - 1
+            if 0 <= r < rows and 0 <= c < cols:
+                grid[r][c] = {
+                    "name":    s["name"],
+                    "class":   s["class"],
+                    "seat_no": s["seat_no"],
+                }
+
+    # ── 為每位學生預算年級/班別 ──
+    for ev in prelim.get("events", []):
+        for s in ev.get("students", []):
+            cls = s.get("class", "")
+            s["grade_cn"]  = GRADE.get(cls[:1], cls[:1]) if cls else ""
+            try:
+                s["class_num"] = str(int(cls[1:])) if len(cls) > 1 else cls
+            except ValueError:
+                s["class_num"] = cls  # 佔位符直接顯示原值
+
+    tmpl_seat  = env.get_template("複賽座位表.html")
+    tmpl_leave = env.get_template("複賽公假單.html")
+
+    print("  [複賽]")
+    for ev in prelim.get("events", []):
+        students = ev.get("students", [])
+        if not students:
+            continue
+
+        # 座位表：每位學生一份（含第二頁比賽辦法）
+        for s in students:
+            fname = f"{year}年_複賽座位表_{s['name']}.html"
+            html = tmpl_seat.render(
+                year=year, school=data["school"],
+                prelim=prelim, event=ev,
+                student=s, room_grid=grid,
+            )
+            out = os.path.join(out_dir, fname)
+            with open(out, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"  ✅ {out}")
+
+        # 公假單：同一競賽項目全部學生共一張
+        fname = f"{year}年_複賽公假單_{ev['name']}.html"
+        html = tmpl_leave.render(
+            year=year, school=data["school"],
+            prelim=prelim, event=ev,
+        )
+        out = os.path.join(out_dir, fname)
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"  ✅ {out}")
+
+
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     yaml_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(script_dir, "winners.yaml")
@@ -98,6 +166,9 @@ def main():
 
     print(f"\n🎉 完成！請用瀏覽器開啟 {out_dir} 中的 .html 檔案，按 Ctrl+P 列印。")
     print("   建議列印設定：紙張 A4、縮放 100%、勾選「背景圖形」\n")
+
+    # 4. 複賽文件（若 winners.yaml 有填 preliminary 區段才生成）
+    gen_preliminary(data, out_dir, env)
 
 if __name__ == "__main__":
     main()

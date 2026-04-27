@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>複賽座位表 - {{ student.name }}</title>
+<style>
+  @page { size: A4; margin: 15mm 15mm 10mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "標楷體", "DFKai-SB", serif; font-size: 11pt; }
+
+  /* ── 頂部：資訊框 + 黑板 ── */
+  .top-section {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8mm;
+    gap: 12mm;
+  }
+  .info-box {
+    border: 1.5px solid #000;
+    min-width: 55mm;
+    flex-shrink: 0;
+  }
+  .info-box table { width: 100%; border-collapse: collapse; }
+  .info-box td {
+    border: 1px solid #000;
+    padding: 4pt 7pt;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+  .info-box .lbl { color: #aaa; }
+  .info-box .val { font-weight: bold; }
+  .blackboard-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4mm;
+  }
+  .blackboard-line {
+    border-bottom: 2px solid #000;
+    margin-bottom: 3pt;
+    width: 100%;
+  }
+  .blackboard-label { font-size: 11pt; text-align: center; }
+
+  /* ── 座位方格區 ── */
+  .seat-section { margin-bottom: 8mm; }
+  .seat-row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 7mm;
+  }
+  .seat-group {
+    display: flex;
+    gap: 3mm;
+  }
+  .seat-group + .seat-group {
+    margin-left: 10mm;
+  }
+  .seat-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18mm;
+  }
+  .seat-box {
+    width: 13mm;
+    height: 13mm;
+    border: 1.5px solid #000;
+    background: white;
+  }
+  .seat-box.mine { background: black; }
+  .seat-label {
+    font-size: 7pt;
+    text-align: center;
+    margin-top: 2pt;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .seat-label.gray { color: #bbb; }
+
+  /* ── 底部：比賽前 / 比賽當天 ── */
+  .bottom-section {
+    display: flex;
+    gap: 8mm;
+  }
+  .info-card {
+    flex: 1;
+    border: 1.5px solid #000;
+    padding: 6pt 9pt;
+    font-size: 10.5pt;
+    line-height: 1.9;
+  }
+  .info-card .card-title { font-weight: bold; font-size: 11pt; }
+  .info-card strong { font-weight: bold; }
+
+  /* ── 比賽辦法（第二頁） ── */
+  .page-break { page-break-before: always; }
+  .rules-wrap { margin-top: 15mm; }
+  .rules-table { width: 100%; border-collapse: collapse; }
+  .rules-table td { border: 1px solid #000; padding: 7pt 10pt; vertical-align: top; font-size: 10.5pt; line-height: 1.8; }
+  .rules-scoring { font-size: 10pt; padding: 5pt 10pt; border: 1px solid #000; border-bottom: none; }
+  .rules-event-label {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10.5pt;
+    width: 36pt;
+    letter-spacing: 3pt;
+  }
+  .rules-list { padding-left: 0; list-style: none; }
+  .rules-list li { margin-bottom: 4pt; }
+  .rules-list li::before { content: attr(data-n) ". "; }
+</style>
+</head>
+<body>
+
+<!-- ════ 第一頁：座位表 ════ -->
+<div class="top-section">
+  <div class="info-box">
+    <table>
+      <tr><td>{{ event.name }}</td></tr>
+      <tr><td><span class="lbl">姓名</span>　{{ student.name }}</td></tr>
+      <tr><td><span class="lbl">帳號</span>　<span class="val">{{ student.account }}</span></td></tr>
+      <tr><td><span class="lbl">密碼</span>　<span class="val">{{ student.password }}</span></td></tr>
+    </table>
+  </div>
+  <div class="blackboard-area">
+    <div class="blackboard-line"></div>
+    <div class="blackboard-label">黑板</div>
+  </div>
+</div>
+
+<div class="seat-section">
+  {% for row in room_grid %}
+  <div class="seat-row">
+    <div class="seat-group">
+      {% for seat in row[:4] %}
+      <div class="seat-cell">
+        {% if seat %}
+          <div class="seat-box {% if seat.name == student.name %}mine{% endif %}"></div>
+          <div class="seat-label {% if seat.name != student.name %}gray{% endif %}">
+            {{ seat.class }}-{{ seat.seat_no }}{{ seat.name }}
+          </div>
+        {% else %}
+          <div class="seat-box"></div>
+          <div class="seat-label">&nbsp;</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="seat-group">
+      {% for seat in row[4:] %}
+      <div class="seat-cell">
+        {% if seat %}
+          <div class="seat-box {% if seat.name == student.name %}mine{% endif %}"></div>
+          <div class="seat-label {% if seat.name != student.name %}gray{% endif %}">
+            {{ seat.class }}-{{ seat.seat_no }}{{ seat.name }}
+          </div>
+        {% else %}
+          <div class="seat-box"></div>
+          <div class="seat-label">&nbsp;</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="bottom-section">
+  <div class="info-card">
+    <div class="card-title">比賽前</div>
+    {% for item in event.pre_checklist %}
+    {{ loop.index }}.{{ item }}<br>
+    {% endfor %}
+    請<br>
+    {% for d in prelim.report_dates %}
+    {{ d }}<br>
+    {% endfor %}
+    到教務處找{{ prelim.contact_teacher }}老師
+  </div>
+  <div class="info-card">
+    <div class="card-title">比賽當天</div>
+    <strong>比賽日期</strong>：{{ prelim.date }}<br>
+    <strong>地點</strong>：{{ prelim.location }}<br>
+    <strong>準備時間</strong>：{{ event.prep_time }}<br>
+    <strong>比賽時間</strong>：{{ event.competition_time }}
+  </div>
+</div>
+
+<!-- ════ 第二頁：比賽辦法 ════ -->
+<div class="page-break">
+<div class="rules-wrap">
+  {% if event.rules_scoring %}
+  <div class="rules-scoring">{{ event.rules_scoring }}</div>
+  {% endif %}
+  <table class="rules-table">
+    <tr>
+      <td class="rules-event-label">{{ event.name | replace("國中甲組", "") | replace("甲組", "") | trim }}</td>
+      <td>
+        <ul class="rules-list">
+          {% for rule in event.rules %}
+          <li data-n="{{ loop.index }}">{{ rule }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+</body>
+</html>

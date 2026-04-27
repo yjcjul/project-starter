@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>學生公假請假單 - 專題簡報國中甲組</title>
+<style>
+  @page { size: A4; margin: 18mm 15mm 15mm 20mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "標楷體", "DFKai-SB", serif; font-size: 11pt; }
+  h1 { text-align: center; font-size: 14pt; font-weight: bold; margin-bottom: 8pt; letter-spacing: 2pt; }
+
+  /* ── 主表格 ── */
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid #000; text-align: center; vertical-align: middle; padding: 3pt 4pt; font-size: 10.5pt; }
+  .label { font-weight: bold; }
+
+  /* 欄寬：年級|班別|座號|姓名|導師簽名|備註 */
+  col.c-grade  { width: 8%;  }
+  col.c-class  { width: 9%;  }
+  col.c-seat   { width: 9%;  }
+  col.c-name   { width: 22%; }
+  col.c-sign   { width: 22%; }
+  col.c-note   { width: 30%; }
+
+  .cell-reason  { width: 10%; font-weight: bold; }
+  .cell-event   { text-align: left; padding-left: 8pt; }
+  .cell-date-lbl { width: 12%; font-weight: bold; }
+  .cell-date-val { text-align: left; padding-left: 6pt; }
+
+  .student-row td { height: 22pt; }
+  .empty-row td   { height: 22pt; color: transparent; } /* 空白列保持高度 */
+
+  /* ── 備註區 ── */
+  .notes-wrap { margin-top: 6pt; display: flex; gap: 10mm; font-size: 10pt; line-height: 1.9; }
+  .notes-col { flex: 1; }
+
+  /* ── 填表日期 + 簽章 ── */
+  .footer { margin-top: 6pt; font-size: 10.5pt; }
+  .fill-date { text-align: right; margin-bottom: 8pt; }
+  .sigs { display: flex; justify-content: space-between; }
+  .sigs span { flex: 1; text-align: center; }
+</style>
+</head>
+<body>
+<h1>台中市立黎明國民中學學生公假請假單</h1>
+
+<table>
+  <colgroup>
+    <col class="c-grade">
+    <col class="c-class">
+    <col class="c-seat">
+    <col class="c-name">
+    <col class="c-sign">
+    <col class="c-note">
+  </colgroup>
+
+  <!-- 事由列 -->
+  <tr>
+    <td class="cell-reason label" rowspan="2">事由</td>
+    <td class="cell-event" colspan="3">
+      臺中市115資訊競賽複賽<br>（專題簡報國中甲組）
+    </td>
+    <td class="label" rowspan="2">公假日期</td>
+    <td class="cell-date-val">自116年　　月　　日第1節起</td>
+  </tr>
+  <tr>
+    <td class="cell-event" colspan="3"></td>
+    <td class="cell-date-val">至116年　　月　　日第4節止</td>
+  </tr>
+
+  <!-- 欄位標頭 -->
+  <tr>
+    <th class="label">年級</th>
+    <th class="label">班別</th>
+    <th class="label">座號</th>
+    <th class="label">姓　名</th>
+    <th class="label">導師簽名</th>
+    <th class="label">備　　註</th>
+  </tr>
+
+  <!-- 學生資料列 -->
+  
+  <tr class="student-row">
+    <td>（</td>
+    <td>（如807）</td>
+    <td>（座號）</td>
+    <td>（學生姓名）</td>
+    <td></td>
+    <td>專題簡報國中甲組</td>
+  </tr>
+  
+
+  <!-- 補足空白列（共15列） -->
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+  <tr class="student-row">
+    <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  
+</table>
+
+<!-- 備註說明 -->
+<div class="notes-wrap">
+  <div class="notes-col">
+    備註：<br>
+    1.是否包含升旗：□是　■否。<br>
+    2.公假須先請，事後補請無效。<br>
+    3.本公假單一律先會導師，後轉送生教組核准。
+  </div>
+  <div class="notes-col">
+    4.服務依規定穿著，儀容保持清潔端莊。<br>
+    5.準時報到，並服從指導老師指導。<br>
+    6.申請公假學生共　<u>1</u>　人。
+  </div>
+</div>
+
+<div class="footer">
+  <div class="fill-date">填表日期：116年　　月　　日</div>
+  <div class="sigs">
+    <span>填表老師：</span>
+    <span>生教組長：</span>
+    <span>學務主任：</span>
+  </div>
+</div>
+
+</body>
+</html>
